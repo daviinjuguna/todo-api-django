@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3@-fd%n%o+zbyra-txhbmt@w%xma10(xx#77-0@^%cihsq0y$z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','192.168.0.28']
+ALLOWED_HOSTS = ['0.0.0.0','192.168.0.28','192.168.0.20','.herokuapp.com']
 
 
 # Application definition
@@ -55,7 +55,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+# Activate Django-Heroku.
+django_heroku.settings(locals())
 
 ROOT_URLCONF = 'config.urls'
 
