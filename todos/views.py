@@ -26,7 +26,7 @@ def apiOverview(request):
 def todoList(request):
 	todos = Todo.objects.all().order_by('-id')
 	serializer = TodoSerializer(todos, many=True)
-	return Response(serializer.data)
+	return Response( {"todo":serializer.data})
 
 @api_view(['GET'])
 def todoDetail(request, pk):
